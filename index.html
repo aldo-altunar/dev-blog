@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aldo Cruz Altunar | Portafolio Frontend & UX/UI - ITIID</title>
+  <meta name="description" content="Portafolio profesional y Dev-Blog de Aldo Cruz Altunar, estudiante de ITIID enfocado en código Frontend y leyes de UX/UI.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header Navigation -->
+    <header>
+      <a href="index.html" class="logo">AldoAltunar.dev</a>
+      
+      <!-- Menú Desktop -->
+      <nav id="nav-menu">
+        <a href="#about">Sobre Mí</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#lab">UX Playground</a>
+        <a href="#skills">Habilidades</a>
+        <a href="#contact">Contacto</a>
+      </nav>
+
+      <div style="display: flex; gap: 0.5rem; align-items: center;">
+        <button id="theme-btn" class="btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; min-height: auto;">☀️ LIGHT</button>
+        <!-- Botón Hamburguesa Móvil -->
+        <button id="menu-toggle" class="menu-toggle-btn" aria-label="Abrir Menú">☰</button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-grid" style="padding: 3rem 0;">
+      <div>
+        <div class="status-badge">
+          <span class="status-dot"></span> Estudiante ITIID &bull; Disponible para Proyectos
+        </div>
+        <h1 style="font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.25rem;">
+          Ingeniero Frontend<br>&amp; Especialista en UX/UI.
+        </h1>
+        <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 2rem; max-width: 540px;">
+          Hola, soy <strong>Aldo Cruz Altunar</strong>. Desarrollo aplicaciones web de alto rendimiento combinando código limpio (CSS/JS Vanilla) con psicología de usuario y accesibilidad.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="#projects" class="btn-primary">Ver Casos de Estudio &rarr;</a>
+          <a href="#contact" class="btn-secondary">Contactar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 01: Sobre Mí -->
+    <section id="about" style="margin: 3rem 0; scroll-margin-top: 2rem;">
+      <div class="section-meta">01 / SOBRE MÍ</div>
+      <div class="card-project" style="padding: 2rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Pasión por el Código y la Usabilidad</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1rem;">
+          Como estudiante de la carrera de <strong>Ingeniería en Tecnologías de la Información e Innovación Digital (ITIID)</strong>, mi objetivo es cerrar la brecha entre el diseño de experiencia de usuario (UX) y la implementación técnica de software (Frontend).
+        </p>
+        <p style="color: var(--text-muted);">
+          Especializado en la creación de sitios ultra rápidos (100/100 en Google Lighthouse), maquetación responsiva precisa y aplicación en código de las leyes de usabilidad de Fitts, Hick y Miller.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 02: Featured Work & Dev-Blog -->
+    <section id="projects" style="margin: 4rem 0; scroll-margin-top: 2rem;">
+      <div class="section-meta">02 / PROYECTOS &amp; DEV-BLOG</div>
+      <div class="section-header">
+        <h2>Código que entiende a las personas.</h2>
+        <p class="section-subtitle">Casos de estudio prácticos donde el Frontend resuelve problemas de usabilidad.</p>
+      </div>
+
+      <div class="grid-2">
+        <!-- Card 1 -->
+        <article class="card-project">
+          <div class="card-preview-box" style="justify-content: flex-start; padding: 1rem; align-items: flex-start; background: #050811;">
+            <pre style="margin: 0; width: 100%;"><code style="font-family: var(--font-mono); font-size: 0.75rem; color: #93c5fd; line-height: 1.4;">
+<span style="color: #64748b;">/* Ley de Fitts: Área táctil */</span>
+<span style="color: #f472b6;">.touch-target</span> {
+  <span style="color: #38bdf8;">min-width</span>: <span style="color: var(--accent-lime);">44px</span>;
+  <span style="color: #38bdf8;">min-height</span>: <span style="color: var(--accent-lime);">44px</span>;
+}
+            </code></pre>
+          </div>
+          <div>
+            <h3 class="card-title">Aplicando la Ley de Fitts en CSS: Blancos Táctiles Móviles</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1rem;">
+              Cómo optimizar las zonas de toque en pantallas de 320px a 428px sin alterar el diseño visual.
+            </p>
+          </div>
+          <div>
+            <a href="blog/ley-de-fitts-css.html" style="text-decoration: none;">
+              <span class="section-meta" style="font-size: 0.75rem;">LEER CASO DE ESTUDIO &rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card-project">
+          <div class="card-preview-box" style="justify-content: flex-start; padding: 1rem; align-items: flex-start; background: #050811;">
+            <pre style="margin: 0; width: 100%;"><code style="font-family: var(--font-mono); font-size: 0.75rem; color: #93c5fd; line-height: 1.4;">
+<span style="color: #64748b;">// Ley de Hick: Revelado progresivo</span>
+<span style="color: #f472b6;">const</span> showNextStep = (stepId) => {
+  formSteps.<span style="color: #38bdf8;">toggle</span>(stepId);
+};
+            </code></pre>
+          </div>
+          <div>
+            <h3 class="card-title">Ley de Hick en JS: Reduciendo Carga Cognitiva</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1rem;">
+              Patrones de revelado progresivo para formularios complejos usando JavaScript vanila.
+            </p>
+          </div>
+          <div>
+            <span class="section-meta" style="font-size: 0.75rem; color: var(--text-muted);">PRÓXIMAMENTE</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Section 03: UX Playground (Laboratorio Interactivo) -->
+    <section id="lab" style="margin: 4rem 0; scroll-margin-top: 2rem;">
+      <div class="section-meta">03 / LABORATORIO INTERACTIVO</div>
+      <div class="section-header">
+        <h2>UX Playground</h2>
+        <p class="section-subtitle">Prueba en vivo cómo el código impacta la usabilidad.</p>
+      </div>
+
+      <div class="playground-widget">
+        <!-- Editor Left -->
+        <div class="editor-window">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <div class="traffic-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <button id="copy-btn" class="btn-secondary" style="padding: 0.2rem 0.6rem; font-size: 0.75rem; min-height: auto;">Copiar Código</button>
+          </div>
+          <pre><code id="code-snippet" style="font-family: var(--font-mono); font-size: 0.82rem; color: #93c5fd;">
+<span style="color: #f472b6;">.primary-action</span> {
+  <span style="color: #38bdf8;">min-inline-size</span>: <span id="code-size" style="color: var(--accent-lime);">44px</span>;
+  <span style="color: #38bdf8;">min-block-size</span>: <span id="code-size-block" style="color: var(--accent-lime);">44px</span>;
+  <span style="color: #38bdf8;">padding</span>: <span style="color: #fca5a5;">12px 20px</span>;
+  <span style="color: #38bdf8;">display</span>: inline-flex;
+}
+          </code></pre>
+        </div>
+
+        <!-- Preview Right -->
+        <div class="preview-window">
+          <span class="section-meta" style="font-size: 0.7rem;" id="target-status">ESTADO: ÉXITO (LEY DE FITTS)</span>
+          <h3 style="font-size: 1.3rem; margin: 0.5rem 0 0.8rem 0;">El tamaño del blanco importa.</h3>
+          <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 1.25rem;">
+            Haz clic en el botón de abajo para alternar en tiempo real entre un área incorrecta (20px) vs una correcta (44px):
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start;">
+            <button class="btn-primary" id="demo-btn" style="font-size: 0.85rem; transition: all 0.3s ease;">
+              Target Accesible (44px) &rarr;
+            </button>
+            <button id="toggle-target-btn" class="btn-secondary" style="font-size: 0.75rem; padding: 0.4rem 0.8rem; min-height: auto;">
+              ⚡ Cambiar Modo de Prueba
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 04: Skills Grid -->
+    <section id="skills" style="margin: 4rem 0; scroll-margin-top: 2rem;">
+      <div class="section-meta">04 / HABILIDADES TÉCNICAS</div>
+      <div class="section-header">
+        <h2>Ingeniería web y principios de diseño.</h2>
+        <p class="section-subtitle">Tecnologías y conceptos clave dominados en ITIID.</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h4>&lt;/&gt; HTML5 Semántico</h4>
+          <span>Estructura &amp; SEO</span>
+        </div>
+        <div class="skill-card">
+          <h4>CSS3 / Responsive</h4>
+          <span>Breakpoints &amp; Flex/Grid</span>
+        </div>
+        <div class="skill-card">
+          <h4>JavaScript Vanilla</h4>
+          <span>Lógica limpia y DOM</span>
+        </div>
+        <div class="skill-card">
+          <h4>Performance / A11y</h4>
+          <span>WCAG 2.1 AA &amp; Speed</span>
+        </div>
+        <div class="skill-card">
+          <h4>Ley de Fitts</h4>
+          <span>Blancos Táctiles Móviles</span>
+        </div>
+        <div class="skill-card">
+          <h4>Ley de Hick</h4>
+          <span>Control de Carga Mental</span>
+        </div>
+        <div class="skill-card">
+          <h4>Core Web Vitals</h4>
+          <span>Optimización Lighthouse</span>
+        </div>
+        <div class="skill-card">
+          <h4>Git / GitHub</h4>
+          <span>Control de Versiones</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 05: Contacto -->
+    <section id="contact" style="margin: 4rem 0 6rem 0; scroll-margin-top: 2rem;">
+      <div class="section-meta">05 / CONTACTO</div>
+      <div class="card-project" style="padding: 2.5rem; text-align: center; align-items: center;">
+        <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">¿Trabajamos juntos?</h2>
+        <p style="color: var(--text-muted); max-width: 500px; margin-bottom: 1.5rem;">
+          Estoy disponible para proyectos de desarrollo Frontend, auditorías de usabilidad y colaboraciones.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+          <a href="mailto:aldo.cruz.altunar@gmail.com" class="btn-primary">Enviar Correo &rarr;</a>
+          <a href="https://github.com/aldo-altunar" target="_blank" rel="noopener noreferrer" class="btn-secondary">GitHub</a>
+          <a href="https://www.linkedin.com/in/aldo-altunar/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B9Rzdflk1RyGpdI9%2FyIg%2Biw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn-secondary">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div>AldoAltunar.dev &copy; 2026 &bull; ITIID</div>
+      <div>Desarrollado con HTML, CSS &amp; JS puro</div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+/* ==========================================================================
+   1. PALETA DE COLORES & RESET (Figma High-Fidelity Design)
+   ========================================================================== */
+:root {
+  --bg-main: #090d16;          /* Fondo ultrascuro Figma */
+  --bg-card: #111827;          /* Tarjetas principales */
+  --bg-card-hover: #162032;    /* Card hover state */
+  --text-main: #ffffff;        /* Texto blanco puro */
+  --text-muted: #94a3b8;       /* Texto secundario slate */
+  --accent-lime: #a3e635;      /* Verde Neón / Lime */
+  --accent-lime-dim: rgba(163, 230, 53, 0.12);
+  --code-bg: #050811;          /* Fondo del editor */
+  --border: rgba(255, 255, 255, 0.08);
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+}
+
+[data-theme="light"] {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --accent-lime: #65a30d;
+  --accent-lime-dim: rgba(101, 163, 13, 0.12);
+  --code-bg: #1e293b;
+  --border: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. COMPONENTES GLOBALES Y ESTRUCTURA
+   ========================================================================== */
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Header & Navegación */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.logo {
+  font-weight: 700;
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 1.1rem;
+  letter-spacing: -0.5px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--text-main);
+}
+
+.menu-toggle-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  font-size: 1.2rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-lime);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-lime);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-lime);
+}
+
+/* Botones */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--accent-lime);
+  color: #090d16;
+  font-weight: 700;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.2s ease;
+  min-height: 44px; /* Ley de Fitts */
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-muted);
+}
+
+/* Secciones y Metadatos */
+.section-meta {
+  font-family: var(--font-mono);
+  color: var(--accent-lime);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  max-width: 320px;
+}
+
+/* Tarjetas de Proyectos */
+.card-project {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-project:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(163, 230, 53, 0.4);
+}
+
+.card-preview-box {
+  background: #0b0f19;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+}
+
+.card-title {
+  color: var(--accent-lime);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Componente UX Playground (Editor Dividido) */
+.playground-widget {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  background: #0b0f19;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  color: #ffffff; /* Forzar texto blanco dentro del IDE */
+}
+
+.editor-window {
+  background: #050811;
+  padding: 1.5rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.traffic-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot-red { background: #ef4444; }
+.dot-yellow { background: #f59e0b; }
+.dot-green { background: #10b981; }
+
+.preview-window {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #0d1322;
+  color: #ffffff;
+}
+
+.preview-window h3 {
+  color: #ffffff !important; /* Garantiza visibilidad en modo claro */
+}
+
+/* Estilos de botones dentro del laboratorio (Alto Contraste) */
+.playground-widget .btn-secondary {
+  color: #f8fafc !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.playground-widget .btn-secondary:hover {
+  border-color: var(--accent-lime) !important;
+  color: var(--accent-lime) !important;
+}
+
+/* Grilla de Habilidades (4x2) */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.skill-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  transition: border-color 0.2s ease;
+}
+
+.skill-card:hover {
+  border-color: var(--accent-lime);
+}
+
+.skill-card h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.skill-card span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ==========================================================================
+   3. BREAKPOINTS ACADÉMICOS (320px A 839px+)
+   ========================================================================== */
+
+/* 1. Ultracompacto (320px - 359px) */
+@media (min-width: 320px) and (max-width: 359px) {
+  .container { padding: 0 12px; }
+  .grid-2, .playground-widget, .skills-grid { display: flex; flex-direction: column; gap: 1rem; }
+  .btn-primary, .btn-secondary { width: 100%; }
+  h1 { font-size: 1.75rem; }
+  .editor-window { border-right: none; border-bottom: 1px solid var(--border); }
+  
+  .menu-toggle-btn { display: block; }
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg-card);
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    z-index: 100;
+  }
+  nav.nav-open { display: flex; }
+}
+
+/* 2. Estándar Móvil (360px - 428px) */
+@media (min-width: 360px) and (max-width: 428px) {
+  .container { padding: 0 18px; }
+  .grid-2, .playground-widget, .skills-grid { display: flex; flex-direction: column; gap: 1rem; }
+  h1 { font-size: 2.2rem; }
+  .editor-window { border-right: none; border-bottom: 1px solid var(--border); }
+  
+  .menu-toggle-btn { display: block; }
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg-card);
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    z-index: 100;
+  }
+  nav.nav-open { display: flex; }
+}
+
+/* 3. Phablet / Horizontal (429px - 599px) */
+@media (min-width: 429px) and (max-width: 599px) {
+  .container { padding: 0 20px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .playground-widget { display: flex; flex-direction: column; }
+}
+
+/* 4. Tablet Pequeña / Plegables (600px - 839px) */
+@media (min-width: 600px) and (max-width: 839px) {
+  .container { max-width: 800px; padding: 0 28px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+}
+
+/* 5. Escritorio (840px+) */
+@media (min-width: 840px) {
+  .container { max-width: 1100px; padding: 0 2rem; }
+  .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; padding: 4rem 0; align-items: center; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+}

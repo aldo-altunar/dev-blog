@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ley de Fitts en CSS - Aldo Cruz Altunar</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="container" style="max-width: 750px; padding-top: 2rem;">
+    
+    <a href="../index.html" class="btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-bottom: 2rem; min-height: auto;">
+      &larr; Volver al Portafolio
+    </a>
+
+    <article style="margin-top: 1rem;">
+      <div class="section-meta">CASO DE ESTUDIO / UX &amp; CSS</div>
+      <h1 style="font-size: 2.2rem; font-weight: 800; margin: 0.5rem 0 1rem 0;">
+        Aplicando la Ley de Fitts en CSS: Blancos Táctiles Móviles
+      </h1>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem;">
+        Publicado por <strong>Aldo Cruz Altunar</strong> &bull; Especialista en Frontend &amp; UX de ITIID
+      </p>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin-bottom: 2rem;">
+
+      <p style="font-size: 1.05rem; margin-bottom: 1.5rem;">
+        La <strong>Ley de Fitts</strong> es un principio de psicología humana que demuestra que el tiempo necesario para presionar un objetivo depende directamente de su <em>tamaño</em> y de la <em>distancia</em> que debe recorrer el usuario.
+      </p>
+
+      <h2 style="font-size: 1.4rem; color: var(--accent-lime); margin: 2rem 0 1rem 0;">El Problema Táctil en Móviles</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+        En pantallas pequeñas (320px – 428px), los elementos interactivos menores a 44px provocan clics erróneos y frustración.
+      </p>
+
+      <h2 style="font-size: 1.4rem; color: var(--accent-lime); margin: 2rem 0 1rem 0;">Solución en CSS sin Alterar el Diseño</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">
+        Podemos agrandar la zona táctil usando pseudo-elementos <code>::before</code> transparentes:
+      </p>
+
+      <div style="background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0;">
+        <pre><code style="font-family: var(--font-mono); font-size: 0.85rem; color: #93c5fd;">
+<span style="color: #f472b6;">.btn-touch</span> {
+  <span style="color: #38bdf8;">position</span>: relative;
+  <span style="color: #38bdf8;">padding</span>: <span style="color: #fca5a5;">8px 12px</span>;
+}
+
+<span style="color: #f472b6;">.btn-touch::before</span> {
+  <span style="color: #38bdf8;">content</span>: <span style="color: #fca5a5;">''</span>;
+  <span style="color: #38bdf8;">position</span>: absolute;
+  <span style="color: #38bdf8;">top</span>: 50%;
+  <span style="color: #38bdf8;">left</span>: 50%;
+  <span style="color: #38bdf8;">transform</span>: translate(-50%, -50%);
+  <span style="color: #38bdf8;">min-width</span>: <span style="color: var(--accent-lime);">44px</span>;
+  <span style="color: #38bdf8;">min-height</span>: <span style="color: var(--accent-lime);">44px</span>;
+}
+        </code></pre>
+      </div>
+
+      <p style="color: var(--text-muted); margin-top: 1.5rem;">
+        De esta manera, el botón sigue viéndose compacto visualmente, pero su área táctil cumple con la norma de accesibilidad WCAG 2.1 AA.
+      </p>
+    </article>
+
+    <footer style="margin-top: 4rem;">
+      <a href="../index.html" class="btn-primary">&larr; Volver al Inicio</a>
+    </footer>
+
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
