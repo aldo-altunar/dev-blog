@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso Administrador | Aldo Altunar</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container" style="max-width: 900px; padding-top: 3rem;">
+    
+    <!-- 🔒 PANTALLA DE AUTENTICACIÓN (LOGIN) -->
+    <div id="login-card" style="max-width: 400px; margin: 0 auto; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 2rem; border-radius: 12px; text-align: center;">
+      <span class="section-meta" style="color: var(--accent-lime);">ACCESO RESTRINGIDO</span>
+      <h2 style="margin: 0.5rem 0 1.5rem 0;">🔐 Iniciar Sesión CMS</h2>
+      
+      <form id="login-form" style="display: flex; flex-direction: column; gap: 1rem;">
+        <input type="password" id="admin-pass" placeholder="Ingresa la contraseña admin..." required style="padding: 0.8rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: #090d16; color: white; width: 100%; text-align: center;">
+        <button type="submit" class="btn-primary" style="padding: 0.8rem; font-size: 0.9rem;">Ingresar al Panel &rarr;</button>
+      </form>
+      <p id="login-error" style="color: #f87171; font-size: 0.85rem; margin-top: 1rem; display: none;">❌ Contraseña incorrecta</p>
+      
+      <div style="margin-top: 1.5rem;">
+        <a href="index.html" class="btn-secondary" style="font-size: 0.75rem; padding: 0.4rem 0.8rem;">&larr; Volver al Sitio Público</a>
+      </div>
+    </div>
+
+    <!-- ⚙️ PANEL DE ADMINISTRACIÓN (Oculto hasta iniciar sesión) -->
+    <div id="admin-panel" style="display: none;">
+      <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <div>
+          <span class="section-meta" style="color: var(--accent-lime);">SESIÓN ACTIVA: ALDO ALTUNAR</span>
+          <h1 style="font-size: 1.8rem; margin: 0.2rem 0;">⚙️ Panel CMS (Administración REST)</h1>
+        </div>
+        <div style="display: flex; gap: 0.5rem;">
+          <button id="logout-btn" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem; min-height: auto; color: #f87171; border-color: rgba(248,113,113,0.3);">
+            🔒 Cerrar Sesión
+          </button>
+          <a href="index.html" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem; min-height: auto;">
+            &larr; Ver Sitio Público
+          </a>
+        </div>
+      </header>
+
+      <!-- Formulario POST / PUT -->
+      <section style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px; margin-bottom: 2.5rem;">
+        <h3 style="margin-top: 0; color: #646cff; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+          📝 Publicar o Editar Entrada
+        </h3>
+        <form id="article-form" style="display: flex; flex-direction: column; gap: 1rem;">
+          <input type="hidden" id="edit-id" value="">
+          <div>
+            <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">Título del Artículo:</label>
+            <input type="text" id="article-title" placeholder="Ej. Arquitectura Modular en Frontend" required style="padding: 0.7rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: #090d16; color: white; width: 100%;">
+          </div>
+          <div>
+            <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">Contenido o Resumen:</label>
+            <textarea id="article-body" placeholder="Escribe el cuerpo del artículo..." required rows="4" style="padding: 0.7rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: #090d16; color: white; width: 100%; font-family: inherit;"></textarea>
+          </div>
+          <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <button type="submit" id="form-submit-btn" class="btn-primary" style="font-size: 0.85rem; padding: 0.6rem 1.2rem;">➕ Guardar Artículo (POST)</button>
+            <button type="button" id="cancel-edit-btn" class="btn-secondary" style="font-size: 0.85rem; padding: 0.6rem 1.2rem; display: none;">Cancelar</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Lista de Artículos -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h3 style="font-size: 1.2rem; margin: 0; color: var(--accent-lime);">Entradas en la Base de Datos</h3>
+          <span class="section-meta" style="font-size: 0.75rem;">Modo Administrador Activo</span>
+        </div>
+
+        <div id="articles-container">
+          <p style="color: var(--text-muted);">Cargando artículos desde la API REST...</p>
+        </div>
+      </section>
+    </div>
+
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

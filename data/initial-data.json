@@ -1,0 +1,26 @@
+{
+  "profile": {
+    "name": "Aldo Cruz Altunar",
+    "role": "Ingeniero Frontend & Especialista UX/UI",
+    "company": "Universidad Politécnica de Chiapas (ITIID)",
+    "bio": "Estudiante de Ingeniería en ITIID enfocado en desarrollo web de alto rendimiento, código limpio con JavaScript Vanilla (ES6 Modules) y principios de usabilidad UX/UI.",
+    "email": "aldo.cruz.altunar@gmail.com"
+  },
+  "articles": [
+    {
+      "id": "1",
+      "title": "Arquitectura Modular con Módulos ES6 en JS Vanilla",
+      "body": "Cómo estructurar un proyecto web limpio separando la capa de servicios API, renderizado del DOM y controladores sin depender de frameworks complejos."
+    },
+    {
+      "id": "2",
+      "title": "Aplicando la Ley de Fitts en CSS para Blancos Táctiles",
+      "body": "Estrategias de maquetación responsiva para garantizar botones e interactivos accesibles de mínimo 44x44px en dispositivos móviles."
+    },
+    {
+      "id": "3",
+      "title": "Consumo Eficiente de APIs REST con Fetch API y Async/Await",
+      "body": "Patrones para la gestión de peticiones HTTP, manejo de errores de red y sincronización de datos dinámicos en la interfaz de usuario."
+    }
+  ]
+}
