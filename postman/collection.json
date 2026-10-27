@@ -1,8 +1,8 @@
 ﻿{
   "info": {
-    "_postman_id": "blog-dev-aldo-altunar-v3",
-    "name": "CMS-API-First",
-    "description": "Especificación oficial de la API REST para el Dev-Blog & Portfolio CMS de Aldo Cruz Altunar (ITIID).",
+    "_postman_id": "blog-dev-aldo-altunar-v4-final",
+    "name": "CMS-API-First-Aldo",
+    "description": "Especificación oficial de API REST con datos reales de Aldo Cruz Altunar",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -29,7 +29,7 @@
       }
     },
     {
-      "name": "2. Listar Artículos",
+      "name": "2. Listar Artículos (Datos Aldo)",
       "request": {
         "method": "GET",
         "header": [],
@@ -43,7 +43,7 @@
       }
     },
     {
-      "name": "3. Consultar Artículo",
+      "name": "3. Consultar Artículo (Datos Aldo)",
       "request": {
         "method": "GET",
         "header": [],
@@ -92,7 +92,7 @@
       }
     },
     {
-      "name": "6. Consultar Landing",
+      "name": "6. Consultar Landing (Datos Aldo)",
       "request": {
         "method": "GET",
         "header": [],
