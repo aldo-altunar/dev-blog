@@ -1,8 +1,8 @@
 ﻿{
   "info": {
-    "_postman_id": "blog-dev-aldo-altunar-v2",
+    "_postman_id": "blog-dev-aldo-altunar-v3",
     "name": "CMS-API-First",
-    "description": "Especificación oficial de la API REST para el Dev-Blog & Portfolio CMS de Aldo Cruz Altunar (ITIID). Compatible para ejecución en entorno local y remoto.",
+    "description": "Especificación oficial de la API REST para el Dev-Blog & Portfolio CMS de Aldo Cruz Altunar (ITIID).",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -18,7 +18,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"title\": \"Arquitectura Modular con Módulos ES6\",\n  \"body\": \"Cómo estructurar un proyecto web limpio separando la capa de servicios API y la interfaz DOM.\",\n  \"userId\": 1\n}"
+          "raw": "{\n  \"title\": \"Arquitectura API-First en JS Vanilla\",\n  \"excerpt\": \"Implementación de una capa ApiService con sincronización en localStorage.\",\n  \"content\": \"Detalle técnico del desarrollo modular con JavaScript ES6 sin dependencias de frameworks.\",\n  \"author\": \"Aldo Cruz Altunar\"\n}"
         },
         "url": {
           "raw": "https://jsonplaceholder.typicode.com/posts",
@@ -34,16 +34,11 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "https://jsonplaceholder.typicode.com/posts?_limit=3",
-          "protocol": "https",
-          "host": ["jsonplaceholder", "typicode", "com"],
-          "path": ["posts"],
-          "query": [
-            {
-              "key": "_limit",
-              "value": "3"
-            }
-          ]
+          "raw": "http://127.0.0.1:5500/data/initial-data.json",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "5500",
+          "path": ["data", "initial-data.json"]
         }
       }
     },
@@ -53,10 +48,11 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "https://jsonplaceholder.typicode.com/posts/1",
-          "protocol": "https",
-          "host": ["jsonplaceholder", "typicode", "com"],
-          "path": ["posts", "1"]
+          "raw": "http://127.0.0.1:5500/data/initial-data.json",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "5500",
+          "path": ["data", "initial-data.json"]
         }
       }
     },
@@ -72,7 +68,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"id\": 1,\n  \"title\": \"Arquitectura Modular con Módulos ES6 (Actualizado)\",\n  \"body\": \"Cuerpo del artículo modificado satisfactoriamente mediante petición PUT.\",\n  \"userId\": 1\n}"
+          "raw": "{\n  \"id\": 1,\n  \"title\": \"Arquitectura API-First en JS Vanilla (Edición Actualizada)\",\n  \"content\": \"Contenido corregido y optimizado desde el CMS de administración.\",\n  \"author\": \"Aldo Cruz Altunar\"\n}"
         },
         "url": {
           "raw": "https://jsonplaceholder.typicode.com/posts/1",
@@ -101,10 +97,11 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "https://jsonplaceholder.typicode.com/users/1",
-          "protocol": "https",
-          "host": ["jsonplaceholder", "typicode", "com"],
-          "path": ["users", "1"]
+          "raw": "http://127.0.0.1:5500/data/initial-data.json",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "5500",
+          "path": ["data", "initial-data.json"]
         }
       }
     },
@@ -123,10 +120,10 @@
           "raw": "{\n  \"name\": \"Aldo Cruz Altunar\",\n  \"role\": \"Ingeniero Frontend & Especialista UX/UI\",\n  \"bio\": \"Estudiante de ITIID enfocado en desarrollo de alto rendimiento y accesibilidad web.\",\n  \"email\": \"aldo.cruz.altunar@gmail.com\"\n}"
         },
         "url": {
-          "raw": "https://jsonplaceholder.typicode.com/users/1",
+          "raw": "https://jsonplaceholder.typicode.com/posts/1",
           "protocol": "https",
           "host": ["jsonplaceholder", "typicode", "com"],
-          "path": ["users", "1"]
+          "path": ["posts", "1"]
         }
       }
     }

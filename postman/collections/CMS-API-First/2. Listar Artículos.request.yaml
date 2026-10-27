@@ -1,0 +1,6 @@
+$kind: http-request
+url: https://jsonplaceholder.typicode.com/posts?_limit=3
+method: GET
+queryParams:
+  _limit: "3"
+order: 2000

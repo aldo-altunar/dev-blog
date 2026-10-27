@@ -1,0 +1,14 @@
+$kind: http-request
+url: https://jsonplaceholder.typicode.com/posts
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "title": "Arquitectura Modular con Módulos ES6",
+      "body": "Cómo estructurar un proyecto web limpio separando la capa de servicios API y la interfaz DOM.",
+      "userId": 1
+    }
+order: 1000
